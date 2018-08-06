@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Header from '../components/header';
+import Header from '../Header/header';
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 
 import '../App.css';
