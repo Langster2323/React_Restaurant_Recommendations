@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../components/header';
+import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+
 import '../App.css';
 
 class App extends Component {
@@ -45,9 +47,19 @@ newGuestId = () => {
     pendingGuest={this.state.pendingGuest}
     newGuestSubmitHandler={this.newGuestSubmitHandler}
     handleNameInput={this.handleNameInput} />
+    <Map google={this.props.google} zoom={14}>
+
+        <Marker onClick={this.onMarkerClick}
+                name={'Current location'} />
+
+        <InfoWindow onClose={this.onInfoWindowClose}>
+        </InfoWindow>
+        </Map>
       </div>
     );
   }
 }
 
-export default App;
+export default GoogleApiWrapper({
+  apiKey: ("AIzaSyAyesbQMyKVVbBgKVi2g6VX7mop2z96jBo")
+})(App)
