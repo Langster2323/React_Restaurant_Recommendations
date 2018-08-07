@@ -81,6 +81,9 @@ getAttendingGuests = () => this.state.restaurants.reduce(
   0
 );
 
+toggleFilter = () =>
+    this.setState({ isFiltered: !this.state.isFiltered});
+
 removeRecommendation = id =>
   this.setState({
     restaurants: this.state.restaurants.filter(restaurant => id !== restaurant.id)
@@ -90,6 +93,7 @@ removeRecommendation = id =>
     const totalInvited= this.getTotalInvited();
     const numberAttending = this.getAttendingGuests();
     const numberUnconfirmed = totalInvited - numberAttending;
+
     return (
       <div className="App">
       <Header
