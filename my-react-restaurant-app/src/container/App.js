@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../Header/header';
 import MainContent from '../MainContent';
-import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+import SimpleMap from './SimpleMap';
 
 import '../App.css';
 
@@ -89,6 +89,11 @@ removeRecommendation = id =>
     restaurants: this.state.restaurants.filter(restaurant => id !== restaurant.id)
   });
 
+  static defaultProps = {
+    center: {lat: 40.73, lng:-73.93},
+    zoom: 12
+  }
+
   render() {
     const totalInvited= this.getTotalInvited();
     const numberAttending = this.getAttendingGuests();
@@ -113,19 +118,11 @@ removeRecommendation = id =>
         removeRecommendation={this.removeRecommendation}
         pendingRestaurant={this.state.pendingRestaurant}
         newRecommendationId={this.newRecommendationId} />
-    <Map google={this.props.google} zoom={14}>
 
-        <Marker onClick={this.onMarkerClick}
-                name={'Current location'} />
-
-        <InfoWindow onClose={this.onInfoWindowClose}>
-        </InfoWindow>
-        </Map>
+    <SimpleMap />
       </div>
     );
   }
 }
 
-export default GoogleApiWrapper({
-  apiKey: ("AIzaSyCdFEcovdt77rU_GPdjNdoTKqrq1NXWU-s")
-})(App)
+export default App;
