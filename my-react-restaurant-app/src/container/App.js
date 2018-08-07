@@ -103,9 +103,9 @@ removeRecommendation = id =>
     <MainContent
         toggleFilter={this.toggleFilter}
         isFiltered={this.state.isFiltered}
-        totalInvited={this.totalInvited}
-        numberAttending={this.numberAttending}
-        numberUnconfirmed={this.numberUnconfirmed}
+        totalInvited={totalInvited}
+        numberAttending={numberAttending}
+        numberUnconfirmed={numberUnconfirmed}
         restaurants={this.state.restaurants}
         toggleConfirmation={this.toggleConfirmation}
         toggleEditing={this.toggleEditing}

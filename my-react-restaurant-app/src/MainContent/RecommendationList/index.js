@@ -20,20 +20,20 @@ const RecommendationList = props =>
     name={restaurant.name}
     isConfirmed={restaurant.isConfirmed}
     isEditing={restaurant.isEditing}
-    handleConfirmation={ () => props.toggleConfirmationAt(restaurant.id) }
-    handleToggleEditing={ () => props.toggleEditingAt(restaurant.id) }
-    setName={text => props.setNameAt(text, restaurant.id)}
-    handleRemove={() => props.removeRecommendationAt(restaurant.id)} />
+    handleConfirmation={ () => props.toggleConfirmation(restaurant.id) }
+    handleToggleEditing={ () => props.toggleEditing(restaurant.id) }
+    setName={text => props.setName(text, restaurant.id)}
+    handleRemove={() => props.removeRecommendation(restaurant.id)} />
     )}
   </ul>;
 
   RecommendationList.propTypes = {
     restaurants: PropTypes.array.isRequired,
-    toggleConfirmationAt: PropTypes.func.isRequired,
-    toggleEditingAt: PropTypes.func.isRequired,
-    setNameAt: PropTypes.func.isRequired,
+    toggleConfirmation: PropTypes.func.isRequired,
+    toggleEditing: PropTypes.func.isRequired,
+    setName: PropTypes.func.isRequired,
     isFiltered: PropTypes.bool.isRequired,
-    removeRecommendationAt: PropTypes.func.isRequired,
+    removeRecommendation: PropTypes.func.isRequired,
     pendingRestaurant: PropTypes.string.isRequired
   };
 

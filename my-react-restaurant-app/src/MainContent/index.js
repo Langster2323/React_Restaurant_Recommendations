@@ -5,23 +5,34 @@ import ConfirmedFilter from './ConfirmedFilter';
 import RecommendationList from './RecommendationList';
 import Counter from './Counter';
 
-const MainContent = props =>
+const MainContent = ({
+  toggleFilter,
+  isFiltered,
+  totalInvited,
+  numberAttending,
+  numberUnconfirmed,
+  restaurants,
+  toggleConfirmation,
+  toggleEditing,
+  setName,
+  removeRecommendation,
+  pendingRestaurant }) =>
 <div className="main">
   <ConfirmedFilter
-  toggleFilter={props.toggleFilter}
-  isFiltered={props.isFiltered} />
+  toggleFilter={toggleFilter}
+  isFiltered={isFiltered} />
   <Counter
-  totalInvited={props.totalInvited}
-  numberAttending={props.numberAttending}
-  numberUnconfirmed={props.numberUnconfirmed} />
+  totalInvited={totalInvited}
+  numberAttending={numberAttending}
+  numberUnconfirmed={numberUnconfirmed} />
   <RecommendationList
-  restaurants={props.restaurants}
-  toggleConfirmationAt={props.toggleConfirmation}
-  toggleEditingAt={this.toggleEditing}
-  setNameAt={props.setName}
-  isFiltered={props.isFiltered}
-  removeRecommendationAt={props.removeRecommendation}
-  pendingGuest={props.pendingGuest} />
+  restaurants={restaurants}
+  toggleConfirmation={toggleConfirmation}
+  toggleEditing={toggleEditing}
+  setName={setName}
+  isFiltered={isFiltered}
+  removeRecommendation={removeRecommendation}
+  pendingRestaurant={pendingRestaurant} />
 </div>
 
 MainContent.propTypes = {
@@ -31,11 +42,11 @@ MainContent.propTypes = {
   numberAttending: PropTypes.number.isRequired,
   numberUnconfirmed: PropTypes.number.isRequired,
   restaurants: PropTypes.array.isRequired,
-  toggleConfirmationAt: PropTypes.func.isRequired,
-  toggleEditingAt: PropTypes.func.isRequired,
-  setNameAt: PropTypes.func.isRequired,
-  removeRecommendationAt: PropTypes.func.isRequired,
-  pendingGuest: PropTypes.string.isRequired
+  toggleConfirmation: PropTypes.func.isRequired,
+  toggleEditing: PropTypes.func.isRequired,
+  setName: PropTypes.func.isRequired,
+  removeRecommendation: PropTypes.func.isRequired,
+  pendingRestaurant: PropTypes.string.isRequired
 }
 
 export default MainContent;
