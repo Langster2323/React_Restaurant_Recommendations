@@ -1,20 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Counter = props =>
+const Counter = ({ numberAttending, numberUnconfirmed, totalInvited }) =>
   <table className="counter">
     <tbody>
       <tr>
         <td>Attending:</td>
-        <td>{props.numberAttending}</td>
+        <td>{numberAttending}</td>
       </tr>
       <tr>
         <td>Unconfirmed:</td>
-        <td>{props.numberUnconfirmed}</td>
+        <td>{numberUnconfirmed}</td>
       </tr>
       <tr>
         <td>Total:</td>
-        <td>{props.totalInvited}</td>
+        <td>{totalInvited}</td>
       </tr>
     </tbody>
   </table>;

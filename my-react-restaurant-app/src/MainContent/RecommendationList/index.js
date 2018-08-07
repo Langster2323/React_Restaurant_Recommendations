@@ -11,7 +11,7 @@ const RecommendationList = props =>
 /*toggleConfirmationAt... Closure...
 */
   <ul>
-  <PendingRecommendation name={props.pendingRestaurant}/>
+  <PendingRecommendation name={props.pendingRestaurant} />
   {props.restaurants
     .filter(restaurant => !props.isFiltered || restaurant.isConfirmed)
     .map((restaurant, index) =>
