@@ -3,18 +3,18 @@ import PropTypes from 'prop-types';
 
 import RestaurantInputForm from './restaurant-input-form';
 
-const Header = ({ newGuestSubmitHandler, pendingGuest, handleNameInput }) =>
+const Header = ({ newRecommendationSubmitHandler, pendingRestaurant, handleNameInput }) =>
   <header>
     <h1>R.R</h1>
     <RestaurantInputForm
-    newGuestSubmitHandler={newGuestSubmitHandler}
-    pendingGuest={pendingGuest}
+    newRecommendationSubmitHandler={newRecommendationSubmitHandler}
+    pendingRestaurant={pendingRestaurant}
     handleNameInput={handleNameInput} />
   </header>
 
   Header.propTypes = {
-    newGuestSubmitHandler: PropTypes.func.isRequired,
-    pendingGuest: PropTypes.string.isRequired,
+    newRecommendationSubmitHandler: PropTypes.func.isRequired,
+    pendingRestaurant: PropTypes.string.isRequired,
     handleNameInput: PropTypes.func.isRequired
   };
 

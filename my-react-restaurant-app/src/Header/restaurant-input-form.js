@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const RestaurantInputForm = ({ newGuestSubmitHandler, handleNameInput, pendingRestaurant }) =>
-  <form onSubmit={newGuestSubmitHandler}>
+const RestaurantInputForm = ({ newRecommendationSubmitHandler, handleNameInput, pendingRestaurant }) =>
+  <form onSubmit={newRecommendationSubmitHandler}>
       <input
       type="text"
       onChange={handleNameInput}
@@ -12,7 +12,7 @@ const RestaurantInputForm = ({ newGuestSubmitHandler, handleNameInput, pendingRe
   </form>
 
   RestaurantInputForm.propTypes = {
-    newGuestSubmitHandler: PropTypes.func.isRequired,
+    newRecommendationSubmitHandler: PropTypes.func.isRequired,
     pendingRestaurant: PropTypes.string.isRequired,
     handleNameInput: PropTypes.func.isRequired
   }

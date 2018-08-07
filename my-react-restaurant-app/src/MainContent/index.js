@@ -15,12 +15,12 @@ const MainContent = props =>
   numberAttending={props.numberAttending}
   numberUnconfirmed={props.numberUnconfirmed} />
   <RecommendationList
-  guests={props.guests}
-  toggleConfirmationAt={props.toggleConfirmationAt}
-  toggleEditingAt={this.toggleEditingAt}
-  setNameAt={props.setNameAt}
+  restaurants={props.restaurants}
+  toggleConfirmationAt={props.toggleConfirmation}
+  toggleEditingAt={this.toggleEditing}
+  setNameAt={props.setName}
   isFiltered={props.isFiltered}
-  removeGuestAt={props.removeGuestAt}
+  removeRecommendationAt={props.removeRecommendation}
   pendingGuest={props.pendingGuest} />
 </div>
 
@@ -30,11 +30,11 @@ MainContent.propTypes = {
   totalInvited: PropTypes.number.isRequired,
   numberAttending: PropTypes.number.isRequired,
   numberUnconfirmed: PropTypes.number.isRequired,
-  guests: PropTypes.array.isRequired,
+  restaurants: PropTypes.array.isRequired,
   toggleConfirmationAt: PropTypes.func.isRequired,
   toggleEditingAt: PropTypes.func.isRequired,
   setNameAt: PropTypes.func.isRequired,
-  removeGuestAt: PropTypes.func.isRequired,
+  removeRecommendationAt: PropTypes.func.isRequired,
   pendingGuest: PropTypes.string.isRequired
 }
 
